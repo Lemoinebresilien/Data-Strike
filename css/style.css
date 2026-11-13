@@ -2,7 +2,7 @@
 @font-face {
     font-family: "High Speed";
     src: url("../fonts/High Speed.otf") format("opentype"),
-         url("../fonts/High Speed.ttf") format("truetype");
+        url("../fonts/High Speed.ttf") format("truetype");
     font-display: swap;
 }
 
@@ -14,14 +14,20 @@
     --bordure: #2a3038;
     --texte: #d6d9dc;
     --texte-doux: #8b939c;
-    --accent: #de9b35;      /* orange/or CS */
-    --accent-2: #5d79ae;    /* bleu CT */
+    --accent: #de9b35;
+    /* orange/or CS */
+    --accent-2: #5d79ae;
+    /* bleu CT */
     --rayon: 4px;
     --police-titre: "High Speed", "Arial Black", sans-serif;
     --police-texte: "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     background: var(--fond);
@@ -31,10 +37,18 @@ body {
     min-height: 100vh;
 }
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { color: #f0b555; }
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
 
-h1, h2, h3 {
+a:hover {
+    color: #f0b555;
+}
+
+h1,
+h2,
+h3 {
     font-family: var(--police-titre);
     font-weight: normal;
     letter-spacing: 1px;
@@ -56,20 +70,27 @@ h1, h2, h3 {
     border-bottom: 1px solid var(--bordure);
     box-shadow: 0 2px 12px rgba(0, 0, 0, .5);
 }
+
 /* fine ligne orange sous le header */
 .entete::after {
     content: "";
     position: absolute;
-    left: 0; right: 0; bottom: -1px;
+    left: 0;
+    right: 0;
+    bottom: -1px;
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--accent) 20%, var(--accent) 80%, transparent);
 }
+
 .entete h1 {
     font-size: clamp(1.6rem, 4vw, 2.4rem);
     color: #fff;
     line-height: 1;
 }
-.entete h1::first-letter { color: var(--accent); }
+
+.entete h1::first-letter {
+    color: var(--accent);
+}
 
 /* ===== Navigation ===== */
 .navigation {
@@ -77,6 +98,7 @@ h1, h2, h3 {
     flex-wrap: wrap;
     gap: .5rem;
 }
+
 .navigation a {
     position: relative;
     color: var(--texte);
@@ -91,6 +113,7 @@ h1, h2, h3 {
     clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
     transition: color .2s, background .2s, border-color .2s;
 }
+
 .navigation a:hover,
 .navigation a.actif {
     color: #111;
@@ -99,16 +122,25 @@ h1, h2, h3 {
 }
 
 @media (max-width: 600px) {
-    .entete { justify-content: center; padding: .9rem 1rem; text-align: center; }
-    .navigation { justify-content: center; }
+    .entete {
+        justify-content: center;
+        padding: .9rem 1rem;
+        text-align: center;
+    }
+
+    .navigation {
+        justify-content: center;
+    }
 }
 
 /* ===== Contenu ===== */
-main, .contenu {
+main,
+.contenu {
     max-width: 1100px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
+
 main h2 {
     display: flex;
     align-items: center;
@@ -125,6 +157,7 @@ main h2 {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1rem;
 }
+
 .carte {
     background: var(--carte);
     border: 1px solid var(--bordure);
@@ -132,13 +165,28 @@ main h2 {
     padding: 1rem;
     transition: transform .2s, border-color .2s;
 }
+
 .carte:hover {
     transform: translateY(-3px);
     border-color: var(--accent);
 }
-.carte img { width: 100%; height: auto; display: block; margin-bottom: .75rem; }
-.carte h3 { font-size: 1rem; color: #fff; }
-.carte p  { color: var(--texte-doux); font-size: .9rem; }
+
+.carte img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: .75rem;
+}
+
+.carte h3 {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.carte p {
+    color: var(--texte-doux);
+    font-size: .9rem;
+}
 
 /* ===== Boutons ===== */
 .bouton {
@@ -153,16 +201,41 @@ main h2 {
     letter-spacing: 1px;
     cursor: pointer;
 }
-.bouton:hover { background: #f0b555; color: #111; }
+
+.bouton:hover {
+    background: #f0b555;
+    color: #111;
+}
 
 /* ===== Tableaux ===== */
-table { width: 100%; border-collapse: collapse; background: var(--carte); }
-th, td { padding: .7rem 1rem; border-bottom: 1px solid var(--bordure); text-align: left; }
-th { background: var(--fond-2); color: var(--accent); text-transform: uppercase; font-size: .8rem; letter-spacing: 1px; }
-tr:hover td { background: #222830; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--carte);
+}
+
+th,
+td {
+    padding: .7rem 1rem;
+    border-bottom: 1px solid var(--bordure);
+    text-align: left;
+}
+
+th {
+    background: var(--fond-2);
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+
+tr:hover td {
+    background: #222830;
+}
 
 /* ===== Pied de page ===== */
-footer, .pied {
+footer,
+.pied {
     text-align: center;
     color: var(--texte-doux);
     font-size: .8rem;
@@ -170,72 +243,73 @@ footer, .pied {
     border-top: 1px solid var(--bordure);
     margin-top: 3rem;
 }
-main .gif
-{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+
+main .gif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-main .stats
-{
+
+main .stats {
     display: flex;
     justify-content: center;
     gap: 60px;
     margin: 30px 0;
 }
 
-main .stat
-{
+main .stat {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-main .stat .nombre
-{
+main .stat .nombre {
     font-size: 2.5rem;
     font-weight: bold;
     color: #e8a13a;
 }
 
-main .stat .label
-{
+main .stat .label {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.85rem;
 }
+
 main .boiteStats {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-main .boiteStats h3
-{
+
+main .boiteStats h3 {
     text-decoration: underline #e8a13a;
     margin-top: 2%;
 }
-main .derniers .carte img
-{
-    
+
+main .derniers .carte img {
+
     width: 40%;
     height: 140px;
     object-fit: contain;
 }
-main .derniers{
+
+main .derniers {
     margin-top: 5%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
 }
-main .derniers .carte{
+
+main .derniers .carte {
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-main .derniers h3{
-text-decoration: underline  #e8a13a;
+
+main .derniers h3 {
+    text-decoration: underline #e8a13a;
 }

@@ -13,8 +13,9 @@
     
         
     <nav class="navigation">
-        <a href="">Ajouter un Skin</a>
+        <a href="/Data-strike/ajouterSkin.php">Ajouter un Skin</a>
         <a href="">Lister les Skins</a>
+        <a href="">Supprimer un skin</a>
     </nav>
     </header>
 
